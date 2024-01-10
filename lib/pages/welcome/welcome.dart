@@ -2,6 +2,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:language_app/common/values/constant.dart';
+import 'package:language_app/global.dart';
 import 'package:language_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:language_app/pages/welcome/bloc/welcome_events.dart';
 import 'package:language_app/pages/welcome/bloc/welcome_states.dart';
@@ -134,7 +136,9 @@ Widget _page(int index, BuildContext context, String buttonName, String title, S
   
                             }else{
                               // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyHomePage(title: 'home page',)));
-                                 Navigator.of(context).pushNamedAndRemoveUntil("signIn", (route) => false);
+                                Global.storageService.setBool(AppConstant.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
+                                // print("the value is ${Global.storageService.getDeviceFirstOpen()}");
+                                 Navigator.of(context).pushNamedAndRemoveUntil("/sign_in", (route) => false);
                             }
                           },
                           child: Container(

@@ -34,7 +34,7 @@ class _RegisterState extends State<Register> {
                         child: reusableText(
                             "Enter your details below & free sign up")),
                     Container(
-                      margin: EdgeInsets.only(top: 36.h),
+                      margin: EdgeInsets.only(top: 40.h),
                       padding: EdgeInsets.only(left: 25.w, right: 25.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +73,7 @@ class _RegisterState extends State<Register> {
                     ),
                     Container(
                     margin: EdgeInsets.only(left: 25.w),
-                    child: reusableText("Enter your details below & free sign up"),
+                    child: reusableText("By creating an account you have to agree with our them & condition. "),
 
                    ),
                     buildlogInAndRegButton("Sign Up", "register", () {
